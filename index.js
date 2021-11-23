@@ -37,3 +37,33 @@ if (right < 360) {
     dodger.style.left =`${right + 1}px`
     }
 }
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowUp") {
+        moveDodgerUp();
+    }
+});
+
+function moveDodgerUp () {
+    const upNumbers = dodger.style.bottom.replace("px", "");
+    const up = parseInt(upNumbers, 10);
+
+if (up < 380) {
+    dodger.style.bottom=`${up + 1}px`
+    }
+}
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowDown") {
+        moveDodgerDown();
+    }
+});
+
+function moveDodgerDown () {
+    const downNumbers = dodger.style.bottom.replace("px", "");
+    const down = parseInt(downNumbers, 10);
+
+if (down > 0) {
+    dodger.style.bottom=`${down - 1}px`
+    }
+}
